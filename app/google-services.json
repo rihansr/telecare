@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "641253317690",
+    "project_id": "test-9bed6",
+    "storage_bucket": "test-9bed6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641253317690:android:5174b2a898ddfa14a72903",
+        "android_client_info": {
+          "package_name": "com.telemedicine.telecare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641253317690-vj76o3r19nr5o9nokv7nd46uu3of042a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.telemedicine.telecare",
+            "certificate_hash": "eb50c399a5dc12fa737500beb37aedd6dae9d399"
+          }
+        },
+        {
+          "client_id": "641253317690-4lkl85pbh9cpf3hdb353c6uttmhg250r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw-StJrsLQzSoeruefizTd48qiRMVDQq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641253317690-4lkl85pbh9cpf3hdb353c6uttmhg250r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

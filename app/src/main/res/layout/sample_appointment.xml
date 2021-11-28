@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:contentPadding="@dimen/padding_X_Large"
+    android:layout_marginTop="@dimen/margin_Small"
+    android:layout_marginStart="@dimen/margin_X_Large"
+    android:layout_marginEnd="@dimen/margin_X_Large"
+    android:layout_marginBottom="@dimen/margin_Large"
+    app:cardCornerRadius="@dimen/radius_Default"
+    app:cardElevation="@dimen/card_Elevation_Small">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.telemedicine.telecare.wiget.CircleImageView
+                android:id="@+id/appointment.UserPhoto.Iv"
+                android:layout_width="@dimen/icon_Size_X_Large"
+                android:layout_height="@dimen/icon_Size_X_Large"
+                android:layout_marginEnd="@dimen/margin_Default"
+                android:scaleType="centerCrop"
+                android:background="@drawable/shape_round"
+                android:backgroundTint="@color/colorSmokeWhite"
+                app:srcCompat="@drawable/ic_avatar"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_Medium"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appointment.UserName.Tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_Small"
+                    tools:text="Sara Hudson"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_Size_Small"
+                    android:textColor="@color/font_Color_Dark"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="@dimen/text_Size_X_Small"
+                    android:fontFamily="@font/oxanium_semi_bold"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appointment.UserInfo.Tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_X_Small"
+                    tools:text="Female &#8729; 24 yrs"
+                    android:textSize="@dimen/text_Size_XX_Small"
+                    android:textColor="@color/font_Color_Gray"
+                    android:fontFamily="@font/oxanium_regular"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="top|end"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/appointment.Edit.Button"
+                    android:layout_width="@dimen/icon_Size_Default"
+                    android:layout_height="@dimen/icon_Size_Default"
+                    android:background="@drawable/shape_round"
+                    android:layout_marginStart="@dimen/margin_Small"
+                    android:layout_marginEnd="@dimen/margin_X_Small"
+                    android:alpha=".75"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/colorBlue"
+                    app:srcCompat="@drawable/ic_edit"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/appointment.Remove.Button"
+                    android:layout_width="@dimen/icon_Size_Default"
+                    android:layout_height="@dimen/icon_Size_Default"
+                    android:layout_marginStart="@dimen/margin_X_Small"
+                    android:background="@drawable/shape_round"
+                    android:alpha=".75"
+                    app:backgroundTint="@color/colorRed"
+                    app:srcCompat="@drawable/ic_delete"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_Small"
+            android:layout_marginTop="@dimen/margin_Large"
+            android:layout_marginBottom="@dimen/margin_Large"
+            android:background="@color/colorSmokeWhite"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appointment.ChamberInfo.Tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_Medium"
+                tools:text="Chittagong Medical (2nd Floor), Room-2"
+                android:textSize="@dimen/text_Size_XX_Small"
+                android:textColor="@color/font_Color_Dark"
+                android:fontFamily="@font/oxanium_semi_bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appointment.Notes.Tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_Medium"
+                tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                android:textSize="@dimen/text_Size_XX_Small"
+                android:textColor="@color/font_Color_Gray"
+                android:fontFamily="@font/oxanium_regular"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appointment.Timing.Tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_Small"
+                tools:text="10:00 AM - 10:30 AM (30 min)"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/text_Size_X_Small"
+                android:textColor="@color/font_Color_Dark"
+                android:fontFamily="@font/oxanium_regular"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appointment.Consultation.Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_Small"
+                    android:layout_marginEnd="@dimen/margin_Small"
+                    android:paddingStart="@dimen/padding_Medium"
+                    android:paddingTop="@dimen/padding_X_Small"
+                    android:paddingBottom="@dimen/padding_X_Small"
+                    android:paddingEnd="@dimen/padding_Medium"
+                    android:background="@drawable/shape_curve"
+                    android:backgroundTint="@color/colorBlue"
+                    android:text="@string/consultation"
+                    android:textSize="@dimen/text_Size_XX_Small"
+                    android:textColor="@color/font_Color_Light"
+                    android:fontFamily="@font/oxanium_regular" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appointment.Report.Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_Small"
+                    android:layout_marginTop="@dimen/margin_Small"
+                    android:paddingStart="@dimen/padding_Medium"
+                    android:paddingTop="@dimen/padding_X_Small"
+                    android:paddingBottom="@dimen/padding_X_Small"
+                    android:paddingEnd="@dimen/padding_Medium"
+                    android:background="@drawable/shape_curve"
+                    android:backgroundTint="@color/colorRed"
+                    android:text="@string/report"
+                    android:textSize="@dimen/text_Size_XX_Small"
+                    android:textColor="@color/font_Color_Light"
+                    android:fontFamily="@font/oxanium_regular"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

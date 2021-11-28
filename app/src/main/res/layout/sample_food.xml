@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_Small"
+    android:layout_marginStart="@dimen/margin_X_Large"
+    android:layout_marginEnd="@dimen/margin_X_Large"
+    android:layout_marginBottom="@dimen/margin_Medium"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/radius_Large"
+    app:cardElevation="@dimen/card_Elevation_Medium"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:contentPaddingTop="@dimen/padding_X_Large"
+    app:contentPaddingLeft="@dimen/padding_Large"
+    app:contentPaddingRight="@dimen/padding_Large"
+    app:contentPaddingBottom="@dimen/padding_X_Large"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!--Food Photo-->
+            <FrameLayout
+                android:id="@+id/food.Photo.Layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <com.telemedicine.telecare.wiget.CircleImageView
+                    android:id="@+id/food.Icon.Iv"
+                    android:layout_width="@dimen/icon_Size_X_Large"
+                    android:layout_height="@dimen/icon_Size_X_Large"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/shape_round"
+                    android:backgroundTint="@color/colorSmokeWhite"
+                    android:layout_margin="@dimen/margin_Small"
+                    android:src="@drawable/ic_placeholder"/>
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_Medium"
+                android:orientation="vertical">
+
+                <!--Food & FoodAmount-->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/margin_Small"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:id="@+id/food.Name.Tv"
+                        style="@style/TitleTvStyle"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        tools:text="Potato"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="@dimen/text_Size_Small"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMinTextSize="@dimen/text_Size_XX_Small"
+                        android:fontFamily="@font/oxanium_semi_bold"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/food.Quantity.Tv"
+                        style="@style/TitleTvStyle"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginStart="@dimen/margin_Small"
+                        tools:text="100g"
+                        android:textSize="@dimen/text_Size_XXX_Small"
+                        android:textColor="@color/icon_Color_Gray"
+                        android:fontFamily="@font/oxanium_regular"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!--Food Type-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/food.FoodType.Tv"
+                    style="@style/TitleTvStyle"
+                    android:layout_marginTop="@dimen/margin_XX_Small"
+                    android:layout_marginBottom="0dp"
+                    tools:text="Vegetables, Serving Size"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/text_Size_XX_Small"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="@dimen/text_Size_XXX_Small"
+                    android:textColor="@color/icon_Color_Gray"
+                    android:fontFamily="@font/oxanium_semi_bold"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="top|end"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/food.Edit.Button"
+                    android:layout_width="@dimen/icon_Size_Default"
+                    android:layout_height="@dimen/icon_Size_Default"
+                    android:background="@drawable/shape_round"
+                    android:layout_marginStart="@dimen/margin_Small"
+                    android:layout_marginEnd="@dimen/margin_X_Small"
+                    android:alpha=".75"
+                    app:backgroundTint="@color/colorBlue"
+                    app:srcCompat="@drawable/ic_edit"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/food.Remove.Button"
+                    android:layout_width="@dimen/icon_Size_Default"
+                    android:layout_height="@dimen/icon_Size_Default"
+                    android:layout_marginStart="@dimen/margin_X_Small"
+                    android:background="@drawable/shape_round"
+                    android:alpha=".75"
+                    app:backgroundTint="@color/colorRed"
+                    app:srcCompat="@drawable/ic_delete"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Food Details-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/food.AdditionalInfo.Tv"
+            style="@style/TitleTvStyle"
+            android:layout_marginTop="@dimen/margin_Medium"
+            android:layout_marginBottom="0dp"
+            tools:text="Calories-110, Fat-0g, Carbohydrate-0g, Sugars-1g, Protein-3g, Vitamin A-21%, Vitamin C-21%, Calcium-21%, Saturated Fat-0%, Cholesterol-0mg"
+            android:lineSpacingExtra="@dimen/margin_X_Small"
+            android:textSize="@dimen/text_Size_XXX_Small"
+            app:autoSizeMinTextSize="@dimen/text_Size_XXXX_Small"
+            app:autoSizeTextType="uniform"
+            android:textColor="@color/icon_Color_Gray"
+            android:fontFamily="@font/oxanium_regular"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

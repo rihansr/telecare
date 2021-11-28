@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/home.Nav.Chats">
+
+    <fragment
+        android:id="@+id/home.Nav.Chats"
+        android:name="com.telemedicine.telecare.fragment.NavChatGroupsFragment"
+        android:label="@string/title_chats"
+        tools:layout="@layout/fragment_nav_chats" />
+
+    <fragment
+        android:id="@+id/home.Nav.Foods"
+        android:name="com.telemedicine.telecare.fragment.NavFoodsFragment"
+        android:label="@string/title_foods"
+        tools:layout="@layout/fragment_nav_foods" />
+
+    <fragment
+        android:id="@+id/home.Nav.Doctors"
+        android:name="com.telemedicine.telecare.fragment.NavDoctorsFragment"
+        android:label="@string/title_doctors"
+        tools:layout="@layout/fragment_nav_doctors" />
+
+</navigation>

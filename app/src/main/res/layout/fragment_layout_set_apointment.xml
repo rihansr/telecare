@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/activity_Background"
+    tools:context=".fragment.SetAppointmentFragment">
+
+    <!--Toolbar-->
+    <include layout="@layout/layout_toolbar"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_XXX_Large"
+        tools:layout_marginTop="0dp"
+        android:layout_height="?android:attr/actionBarSize"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="vertical"
+        android:requiresFadingEdge="vertical"
+        android:fadingEdgeLength="@dimen/fading_Edge_Length"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_X_Large"
+            android:paddingBottom="@dimen/margin_X_Large"
+            android:orientation="vertical">
+
+            <!--Month-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appointment.Month.Tv"
+                android:minWidth="@dimen/_116sdp"
+                android:drawableEnd="@drawable/ic_arrow_down"
+                android:drawableTint="@color/icon_Color_Dark"
+                android:layout_marginStart="@dimen/margin_X_Large"
+                android:layout_marginBottom="@dimen/margin_Large"
+                style="@style/TitleTvStyle"
+                tools:text="July, 2020"/>
+
+            <!--Available Days-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/appointment.Days.Rcv"
+                style="@style/RecyclerViewStyle.Horizontal"
+                android:paddingStart="@dimen/padding_Large"
+                android:paddingEnd="@dimen/padding_Large"
+                tools:itemCount="6"
+                tools:listitem="@layout/sample_day"/>
+
+            <!--Available Time Title-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="@dimen/margin_XXX_Large"
+                android:layout_marginStart="@dimen/margin_X_Large"
+                android:layout_marginBottom="@dimen/margin_Medium"
+                style="@style/TitleTvStyle"
+                android:text="@string/availableTime"/>
+
+            <!--Times-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/appointment.Times.Rcv"
+                style="@style/RecyclerViewStyle.Grid"
+                android:paddingStart="@dimen/padding_Default"
+                android:paddingEnd="@dimen/padding_Default"
+                app:spanCount="4"
+                tools:itemCount="5"
+                tools:listitem="@layout/sample_time"/>
+
+            <!--Patient Details Title-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_XX_Large"
+                android:layout_marginStart="@dimen/margin_X_Large"
+                android:layout_marginEnd="@dimen/margin_X_Large"
+                android:layout_marginBottom="@dimen/margin_Large"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_weight="1"
+                    style="@style/TitleTvStyle"
+                    android:text="@string/patientDetails"
+                    android:layout_margin="0dp"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/appointment.IsPatient.Cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="false"
+                    android:buttonTint="@color/icon_Color_Accent"
+                    android:checked="true"
+                    android:textColor="@color/font_Color_Gray"
+                    android:textSize="@dimen/text_Size_Small"
+                    android:fontFamily="@font/oxanium_regular"
+                    android:text="@string/me"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--Patient Name-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/appointment.Name.Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_X_Large"
+                android:layout_marginEnd="@dimen/margin_X_Large"
+                android:layout_marginBottom="@dimen/margin_X_Large"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_Small"
+                    android:paddingBottom="@dimen/padding_X_Small"
+                    android:text="@string/nameTitle"
+                    android:textSize="@dimen/text_Size_Small"
+                    android:fontFamily="@font/oxanium_semi_bold"
+                    android:textColor="@color/font_Color_Gray"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/appointment.PatientName.Input"
+                    style="@style/InputFieldStyle"
+                    android:hint="@string/patientName_Hint"
+                    android:layout_margin="0dp"
+                    android:paddingTop="@dimen/padding_Default"
+                    android:paddingBottom="@dimen/padding_Default"
+                    android:background="@drawable/shape_curve"
+                    android:backgroundTint="@color/colorSmokeWhite"
+                    android:inputType="textPersonName|textCapWords"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--Patient Age-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/appointment.Age.Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_X_Large"
+                android:layout_marginEnd="@dimen/margin_X_Large"
+                android:layout_marginBottom="@dimen/margin_X_Large"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_Small"
+                    android:paddingBottom="@dimen/padding_X_Small"
+                    android:text="@string/ageTitle"
+                    android:textSize="@dimen/text_Size_Small"
+                    android:fontFamily="@font/oxanium_semi_bold"
+                    android:textColor="@color/font_Color_Gray"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/appointment.PatientAge.Input"
+                    style="@style/InputFieldStyle"
+                    android:hint="@string/patientAge_Hint"
+                    android:layout_margin="0dp"
+                    android:paddingTop="@dimen/padding_Default"
+                    android:paddingBottom="@dimen/padding_Default"
+                    android:background="@drawable/shape_curve"
+                    android:backgroundTint="@color/colorSmokeWhite"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:digits="0123456789"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--Patient Gender-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/appointment.Gender.Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_X_Large"
+                android:layout_marginEnd="@dimen/margin_X_Large"
+                android:layout_marginBottom="@dimen/margin_X_Large"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_Small"
+                    android:paddingBottom="@dimen/padding_X_Small"
+                    android:text="@string/gender_Hint"
+                    android:textSize="@dimen/text_Size_Small"
+                    android:fontFamily="@font/oxanium_semi_bold"
+                    android:textColor="@color/font_Color_Gray"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/appointment.GenderMale.Tv"
+                        android:layout_width="@dimen/_72sdp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_curve_accent"
+                        android:layout_marginEnd="@dimen/margin_Small"
+                        android:paddingTop="@dimen/padding_Medium"
+                        android:paddingBottom="@dimen/padding_Medium"
+                        android:text="@string/male"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/text_Size_X_Small"
+                        android:fontFamily="@font/oxanium_regular"
+                        android:textColor="@color/font_Color_Light"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/appointment.GenderFemale.Tv"
+                        android:layout_width="@dimen/_72sdp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_curve"
+                        android:layout_marginStart="@dimen/margin_Small"
+                        android:paddingTop="@dimen/padding_Medium"
+                        android:paddingBottom="@dimen/padding_Medium"
+                        android:text="@string/female"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/text_Size_X_Small"
+                        android:fontFamily="@font/oxanium_regular"
+                        android:textColor="@color/font_Color_Gray"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--Additional Options-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_X_Large"
+                android:layout_marginEnd="@dimen/margin_X_Large"
+                android:layout_marginBottom="@dimen/margin_X_Large"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_Small"
+                    android:paddingBottom="@dimen/padding_X_Small"
+                    android:text="@string/additional"
+                    android:textSize="@dimen/text_Size_Small"
+                    android:fontFamily="@font/oxanium_semi_bold"
+                    android:textColor="@color/font_Color_Gray"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/appointment.IsConsultation.Cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_Small"
+                        android:buttonTint="@color/icon_Color_Accent"
+                        android:textColor="@color/font_Color_Gray"
+                        android:textSize="@dimen/text_Size_Small"
+                        android:fontFamily="@font/oxanium_regular"
+                        android:checked="true"
+                        android:text="@string/consultation"/>
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/appointment.IsReport.Cb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_Small"
+                        android:buttonTint="@color/icon_Color_Accent"
+                        android:textColor="@color/font_Color_Gray"
+                        android:textSize="@dimen/text_Size_Small"
+                        android:fontFamily="@font/oxanium_regular"
+                        android:text="@string/report"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--Patient Notes-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_X_Large"
+                android:layout_marginEnd="@dimen/margin_X_Large"
+                android:layout_marginBottom="@dimen/margin_XXXX_Large"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_Small"
+                    android:paddingBottom="@dimen/padding_X_Small"
+                    android:text="@string/notesTitle"
+                    android:textSize="@dimen/text_Size_Small"
+                    android:fontFamily="@font/oxanium_semi_bold"
+                    android:textColor="@color/font_Color_Gray"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/appointment.Notes.Input"
+                    style="@style/InputFieldStyle"
+                    android:minHeight="@dimen/_96sdp"
+                    android:maxHeight="@dimen/_192sdp"
+                    android:hint="@string/writeYourProblem"
+                    android:layout_margin="0dp"
+                    android:paddingTop="@dimen/padding_Default"
+                    android:paddingBottom="@dimen/padding_Default"
+                    android:background="@drawable/shape_curve"
+                    android:backgroundTint="@color/colorSmokeWhite"
+                    android:gravity="top"
+                    android:inputType="textMultiLine|textAutoCorrect"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--Appointment Button-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/appointment.Set.Button"
+                style="@style/ButtonStyle"
+                android:text="@string/setAppointment"
+                android:textAllCaps="false"
+                android:layout_marginBottom="@dimen/margin_X_Large" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

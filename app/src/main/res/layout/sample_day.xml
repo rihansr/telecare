@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemHolder"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/padding_Small"
+    android:paddingEnd="@dimen/padding_Small"
+    android:orientation="vertical">
+
+   <androidx.appcompat.widget.LinearLayoutCompat
+       android:id="@+id/day.Layout"
+       android:layout_width="@dimen/_60sdp"
+       android:layout_height="@dimen/_72sdp"
+       android:background="@drawable/shape_curve"
+       android:gravity="center"
+       android:orientation="vertical">
+
+       <!--Day-->
+       <androidx.appcompat.widget.AppCompatTextView
+           android:id="@+id/day.Tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           tools:text="13"
+           android:textSize="@dimen/text_Size_X_Large"
+           android:fontFamily="@font/oxanium_semi_bold"
+           android:textColor="@color/font_Color_Gray"/>
+
+       <!--Weekday-->
+       <androidx.appcompat.widget.AppCompatTextView
+           android:id="@+id/weekday.Tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="@dimen/margin_Medium"
+           tools:text="Mon"
+           android:textAlignment="center"
+           android:textSize="@dimen/text_Size_XXX_Small"
+           android:textColor="@color/font_Color_Gray"
+           android:fontFamily="@font/oxanium_semi_bold"
+           android:textAllCaps="true"/>
+
+   </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

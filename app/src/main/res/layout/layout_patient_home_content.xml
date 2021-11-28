@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home.Content.Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_Background"
+    android:orientation="vertical"
+    tools:context=".activity.PatientHomeActivity">
+
+    <!--Toolbar-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginTop="@dimen/margin_XXX_Large"
+        android:paddingStart="@dimen/padding_Large"
+        android:paddingEnd="@dimen/padding_Large">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/home.Toolbar.Menu.Button"
+            android:layout_width="@dimen/icon_Size_Medium"
+            android:layout_height="@dimen/icon_Size_Medium"
+            android:layout_gravity="start|center_vertical"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/_2sdp"
+            app:srcCompat="@drawable/ic_nav_menu" />
+
+    </FrameLayout>
+
+    <!--Doctor Search-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_X_Large"
+        android:layout_marginTop="@dimen/margin_Medium"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TitleTvStyle"
+            android:fontFamily="@font/oxanium_light"
+            android:layout_marginBottom="@dimen/margin_Small"
+            android:text="@string/search"
+            android:textSize="@dimen/text_Size_XXX_Large" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TitleTvStyle"
+            android:layout_marginBottom="@dimen/margin_Small"
+            android:fontFamily="@font/oxanium_semi_bold"
+            android:text="@string/doctorRightNow"
+            android:textSize="@dimen/text_Size_XXX_Large" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/home.Search.Tv"
+        style="@style/InputFieldStyle"
+        android:layout_marginStart="@dimen/margin_X_Large"
+        android:layout_marginTop="@dimen/margin_X_Large"
+        android:layout_marginEnd="@dimen/margin_X_Large"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="@color/colorSmokeWhite"
+        android:drawableStart="@drawable/ic_input_search"
+        android:hint="@string/searchByName"
+        android:paddingTop="@dimen/padding_Default"
+        android:paddingBottom="@dimen/padding_Default" />
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_X_Large"
+            android:fadingEdge="vertical"
+            android:requiresFadingEdge="vertical"
+            android:fadingEdgeLength="@dimen/fading_Edge_Length"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Specialty  Title-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TitleTvStyle"
+                    android:layout_marginStart="@dimen/margin_X_Large"
+                    android:layout_marginBottom="@dimen/margin_X_Large"
+                    android:text="@string/specialty_Hint" />
+
+                <!--Specialties-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home.Specialties.Rcv"
+                    style="@style/RecyclerViewStyle.Grid"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingStart="@dimen/padding_Large"
+                    android:paddingEnd="@dimen/padding_Large"
+                    android:layout_marginBottom="@dimen/margin_X_Large"
+                    app:spanCount="3"
+                    tools:itemCount="6"
+                    android:fadingEdge="vertical"
+                    android:requiresFadingEdge="vertical"
+                    android:fadingEdgeLength="@dimen/fading_Edge_Length"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/sample_specialty"/>
+
+                <!--Daily Foods-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home.DailyFoods.Rcv"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"
+                    style="@style/RecyclerViewStyle.Vertical"
+                    tools:itemCount="5"
+                    android:clipToPadding="false"
+                    tools:listitem="@layout/sample_daily_food"/>
+
+                <!--Divider-->
+                <View
+                    android:id="@+id/home.Divider.View"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/view_Small"
+                    android:background="@color/colorSmokeWhite"
+                    android:layout_marginStart="@dimen/margin_X_Large"
+                    android:layout_marginEnd="@dimen/margin_X_Large"
+                    android:layout_marginBottom="@dimen/margin_Large"/>
+
+                <!--Total Info-->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_X_Large"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/home.TotalData.View"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_X_Large"
+                        android:layout_marginBottom="@dimen/margin_Large"
+                        android:layout_gravity="start"
+                        android:orientation="vertical">
+
+                        <!--Calories-->
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/margin_Small"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginEnd="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                android:text="@string/calories"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:fontFamily="@font/oxanium_semi_bold"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/home.Calories.Tv"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginStart="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                tools:text="100g / 100g"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:textColor="@color/icon_Color_Gray"
+                                android:fontFamily="@font/oxanium_regular"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <!--Sugar-->
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/margin_Small"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginEnd="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                android:text="@string/sugar"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:fontFamily="@font/oxanium_semi_bold"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/home.Sugar.Tv"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginStart="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                tools:text="100g / 100g"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:textColor="@color/icon_Color_Gray"
+                                android:fontFamily="@font/oxanium_regular"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <!--Fat-->
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/margin_Small"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginEnd="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                android:text="@string/fat"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:fontFamily="@font/oxanium_semi_bold"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/home.Fat.Tv"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginStart="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                tools:text="100g / 100g"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:textColor="@color/icon_Color_Gray"
+                                android:fontFamily="@font/oxanium_regular"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <!--Carbohydrate-->
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/margin_Small"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginEnd="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                android:text="@string/carboHydrate"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:fontFamily="@font/oxanium_semi_bold"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/home.Carbohydrate.Tv"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginStart="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                tools:text="100g / 100g"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:textColor="@color/icon_Color_Gray"
+                                android:fontFamily="@font/oxanium_regular"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <!--Protein-->
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/margin_Small"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginEnd="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                android:text="@string/protein"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:fontFamily="@font/oxanium_semi_bold"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/home.Protein.Tv"
+                                style="@style/TitleTvStyle"
+                                android:layout_marginStart="@dimen/margin_Small"
+                                android:layout_marginBottom="0dp"
+                                tools:text="100g / 100g"
+                                android:textSize="@dimen/text_Size_XXX_Small"
+                                android:textColor="@color/icon_Color_Gray"
+                                android:fontFamily="@font/oxanium_regular"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/home.AddDailyFood.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="@dimen/margin_X_Large"
+                android:layout_marginBottom="@dimen/margin_Large"
+                app:fabSize="normal"
+                android:src="@drawable/ic_add"
+                android:tint="@color/icon_Color_Light"
+                tools:ignore="ContentDescription" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

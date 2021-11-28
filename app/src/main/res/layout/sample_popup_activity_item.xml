@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/padding_Medium"
+    android:paddingEnd="@dimen/padding_Medium"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context=".adapter.PopupActivityLevelsAdapter">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/activityLevel.Level.Tv"
+        style="@style/TitleTvStyle"
+        tools:text="Sedentary"
+        android:layout_marginTop="@dimen/margin_Medium"
+        android:layout_marginBottom="@dimen/margin_XX_Small"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/text_Size_XX_Small"
+        android:fontFamily="@font/oxanium_regular"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/activityLevel.Details.Tv"
+        style="@style/TitleTvStyle"
+        android:layout_marginTop="@dimen/margin_XX_Small"
+        android:layout_marginBottom="@dimen/margin_Medium"
+        tools:text="little or no exercise"
+        android:textSize="@dimen/text_Size_XXX_Small"
+        android:textColor="@color/font_Color_Gray"
+        android:fontFamily="@font/oxanium_regular"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

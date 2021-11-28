@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_Background"
+    tools:context=".activity.AdminHomeActivity">
+
+  <FrameLayout
+      android:id="@+id/home.Content.Layout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="top"
+      tools:openDrawer="start"
+      android:layout_marginBottom="?android:attr/actionBarSize">
+
+    <!--Nav Content-->
+    <include layout="@layout/layout_admin_home_content" />
+
+  </FrameLayout>
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/home.Nav.View"
+      android:layout_width="match_parent"
+      android:layout_height="?android:attr/actionBarSize"
+      android:layout_gravity="bottom"
+      app:labelVisibilityMode="labeled"
+      app:itemIconSize="@dimen/_18sdp"
+      android:background="?android:attr/windowBackground"
+      app:menu="@menu/admin_nav_menu" />
+
+</FrameLayout>

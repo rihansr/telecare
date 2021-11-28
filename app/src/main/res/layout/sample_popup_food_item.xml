@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/padding_Medium"
+    android:paddingEnd="@dimen/padding_Medium"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@android:color/transparent"
+    tools:context=".adapter.PopupFoodsAdapter">
+
+    <!--Food Photo-->
+    <FrameLayout
+        android:id="@+id/food.Photo.Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <com.telemedicine.telecare.wiget.CircleImageView
+            android:id="@+id/food.Icon.Iv"
+            android:layout_width="@dimen/icon_Size_Large"
+            android:layout_height="@dimen/icon_Size_Large"
+            android:scaleType="centerCrop"
+            android:background="@drawable/shape_round"
+            android:backgroundTint="@color/colorSmokeWhite"
+            android:layout_margin="@dimen/margin_Small"
+            android:src="@drawable/ic_placeholder"/>
+
+    </FrameLayout>
+
+    <!--Food Details-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_Medium"
+        android:layout_marginStart="@dimen/margin_Small"
+        android:layout_marginBottom="@dimen/margin_Medium"
+        android:orientation="vertical">
+
+        <!--Food Name-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/food.Name.Tv"
+            style="@style/TitleTvStyle"
+            tools:text="Potato"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="@dimen/margin_XX_Small"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/text_Size_XX_Small"
+            android:fontFamily="@font/oxanium_regular"/>
+
+        <!--Food Type-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/food.Type.Tv"
+            style="@style/TitleTvStyle"
+            android:layout_marginTop="@dimen/margin_XX_Small"
+            android:layout_marginBottom="0dp"
+            tools:text="Vegetable"
+            android:textSize="@dimen/text_Size_XXX_Small"
+            android:textColor="@color/font_Color_Gray"
+            android:fontFamily="@font/oxanium_regular"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

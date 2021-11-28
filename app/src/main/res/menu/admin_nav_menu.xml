@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home.Nav.Chats"
+        android:icon="@drawable/ic_nav_chats"
+        android:title="@string/title_chats" />
+
+    <item
+        android:id="@+id/home.Nav.Foods"
+        android:icon="@drawable/ic_nav_foods"
+        android:title="@string/title_foods" />
+
+    <item
+        android:id="@+id/home.Nav.Doctors"
+        android:icon="@drawable/ic_nav_doctors"
+        android:title="@string/title_doctors" />
+
+    <item
+        android:id="@+id/home.Nav.More"
+        android:icon="@drawable/ic_nav_more"
+        android:title="@string/title_more" />
+
+</menu>

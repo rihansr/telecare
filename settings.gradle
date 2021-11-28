@@ -1,0 +1,2 @@
+rootProject.name='telecare'
+include ':app'
